@@ -70,13 +70,13 @@ export default class NotificationCenter extends Component {
   }
 
   handleFriendRequest(type, user = null) {
-    // console.log(i  d);
     if (type == 2) {
       this.setState({
         friendRequestName: `Do you want to accept ${user.name}`,
         showRequestPopup: true,
         requestSender: user
       });
+      console.log(this.state);
     }
   }
 
@@ -110,7 +110,6 @@ export default class NotificationCenter extends Component {
   }
 
   render() {
-    console.log(this.state.showRequestPopup);
     return (
       <div className={this.state.dropdownClass} >
 
@@ -121,12 +120,10 @@ export default class NotificationCenter extends Component {
           <Swal
             type="warning"
             show={this.state.showRequestPopup}
-            // show={this.state.showRequestPopup}
             title={this.state.friendRequestName}
             showCancelButton={true}
             cancelButtonColor='red'
             confirmButtonText='Yes!'
-            html='<button class="btn btn-danger btn-sm"></button>'
             onConfirm={this.confirmUser.bind(this, this.state.requestSender)}
           />
 
@@ -140,7 +137,6 @@ export default class NotificationCenter extends Component {
                 <span className="date">{notification.created_at}</span>
               </div>
             </div>
-
           ))}
 
 
@@ -152,8 +148,4 @@ export default class NotificationCenter extends Component {
 
     );
   }
-}
-
-if (document.getElementById('notificationCenter')) {
-  ReactDOM.render(<NotificationCenter />, document.getElementById('notificationCenter'));
 }

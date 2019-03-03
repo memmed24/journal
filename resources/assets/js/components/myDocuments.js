@@ -11,6 +11,6 @@ export default class myDocuments extends Component {
     }
 }
 
-if (document.getElementById('mydocuments')) {
+if (document.getElementById('')) {
     ReactDOM.render(<myDocuments />, document.getElementById('mydocuments'));
 }

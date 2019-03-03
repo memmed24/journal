@@ -13,8 +13,6 @@ class NotificationController extends Controller
         $notification = Notification::with(['user'])->orderBy('id', 'desc');
         if ($request->has('limit')) {
             $notification = $notification->limit($request->get('limit'));
-        } else {
-            $notification = $notification->where('seen', 0);
         }
         $data = [
             'count' => $notification->count(),

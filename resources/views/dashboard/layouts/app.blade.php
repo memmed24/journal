@@ -52,36 +52,15 @@
               </div>
               <nav class="navbar-sidebar2">
                   <ul class="list-unstyled navbar__list">
-                      <li class="active has-sub">
-                          <a class="js-arrow" href="#">
-                              <i class="fas fa-tachometer-alt"></i>Dashboard
-                              <span class="arrow">
-                                  <i class="fas fa-angle-down"></i>
-                              </span>
-                          </a>
-                          <ul class="list-unstyled navbar__sub-list js-sub-list">
-                              <li>
-                                  <a href="index.html">
-                                      <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
-                              </li>
-                              <li>
-                                  <a href="index2.html">
-                                      <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
-                              </li>
-                              <li>
-                                  <a href="index3.html">
-                                      <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                              </li>
-                              <li>
-                                  <a href="index4.html">
-                                      <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
-                              </li>
-                          </ul>
-                      </li>
                       <li>
                       <a href="{{route('documents.index')}}">
                               <i class="fas fa-chart-bar"></i>Sənədlər</a>
                           @yield('documentNotifications')
+                      </li>
+                        <li>
+                            <a href="">
+                                Users 
+                            </a>
                       </li>
                   </ul>
               </nav>
@@ -116,7 +95,7 @@
                                     </div>
                                 </div>
                                 <div id="notificationCenter" class="header-button-item ">
-
+                                    
                                     
                             
                                 </div>

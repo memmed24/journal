@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('department')->nullable();
             $table->string('street_address')->nullable();
             $table->string('city')->nullable();
+            $table->string('orcidid')->nullable();
             $table->string('province')->nullable();
             $table->string('zip')->nullable();
             $table->string('country')->nullable();

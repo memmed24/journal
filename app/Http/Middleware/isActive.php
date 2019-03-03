@@ -16,11 +16,13 @@ class isActive
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->active == 1) 
-            return $next($request);
-        Auth::logout();
-        Session::flush();
-        Session::flash('notActive', 'Your profile needed to be accepted by admin');
+        if(Auth::check()) {
+            if (Auth::user()->active == 1)
+                return $next($request);
+            Auth::logout();
+            Session::flush();
+            Session::flash('notActive', 'Your profile needed to be accepted by admin');
+        }
         return redirect('/login');
     }
 }

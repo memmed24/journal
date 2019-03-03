@@ -14,5 +14,5 @@ require('./bootstrap');
  */
 
 require('./components/Document');
-require('./components/NotificationCenter');
+require('./components/Notifications');
 require('./components/myDocuments');

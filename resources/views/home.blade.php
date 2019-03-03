@@ -10,7 +10,7 @@
                 @csrf
 
                 <div class="form-group row">
-                    <label for="document" class="col-md-4 col-form-label text-md-right">Fayl</label>
+                    <label for="document" class="col-md-4 col-form-label text-md-right">File</label>
 
                     <div class="col-md-6">
                         <input id="document" type="file"
@@ -22,6 +22,13 @@
                             <strong>{{ $errors->first('document') }}</strong>
                         </span>
                         @endif
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="document" class="col-md-4 col-form-label text-md-right">Author(s)</label>
+
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" name="author_name[]" value="{{Auth::user()->name}}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -38,7 +45,7 @@
                 @switch(Session::get('document'))
                     @case("success")
                         <div class="alert alert-success" role="alert">
-                            Uğur ilə göndərildi
+                            Sucessfully sent! 
                         </div>
                         @break
                     @case("fail")

@@ -20,11 +20,12 @@ Route::group(['middleware' => ['active']], function() {
 
 });
 
-Route::resource('admin/documents', 'DocumentController');
-Route::group(['middleware' => ['admin', 'active']], function() {
+Route::group(['middleware' => ['admin', 'active'], 'prefix' => 'admin'], function() {
 
-    Route::get('admin', 'AdminController@index');
-    Route::get('admin/notifications', 'NotificationController@index')->name('notifications');
+    Route::get('', 'AdminController@index');
+    Route::resource('documents', 'DocumentController');
+    Route::get('notifications', 'NotificationController@index')->name('notifications');
+    // Route::get('')
 
 });
 

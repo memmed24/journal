@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use App\Document;
 use Auth;
+use App\User;
 
 class UserController extends Controller
 {
@@ -25,7 +26,10 @@ class UserController extends Controller
 
     public function myDocuments() 
     {
-        return view('site.user.document.mydocument');
+        $documents = Auth::user()->documents;
+        return view('site.user.document.mydocument', [
+            'documents' => $documents
+        ]);
     }
   
 }
